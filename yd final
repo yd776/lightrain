@@ -12,9 +12,8 @@ Names = []
 Prices = []
 Rating = []
 Links = []
-ans=[]
-for i in range(18):
-  ans.append([])
+
+ 
 for i in soup.find_all('span', {'class':'a-size-medium a-color-base a-text-normal'}):
     string=i.text
     Names.append(string.strip())
@@ -29,8 +28,12 @@ for k in soup.find_all('span', {'class':'a-icon-alt'}):
 for l in soup.find_all('a', {'class':'a-link-normal s-link-style a-text-normal'}):
     Links.append(l.get('href'))
  
+ans=[]
+for i in range(len(Names)):
+  ans.append([])
+ 
 
-for i in range(18):
+for i in range(len(Names)):
     ans[i].append(Names[i])
     ans[i].append(Prices[i])
     ans[i].append(Rating[i])
